@@ -1,7 +1,7 @@
 local sideData = {
   {
     name = 'thelivingdead',
-    startunit = 'armcv',
+    startunit = 'armck',
   },
 }
 return sideData

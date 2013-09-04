@@ -66,6 +66,7 @@ return {
 			[13] = "corpyro",
 			[14] = "armsnipe",
 			[15] = "cormort",
+			[16] = "armck",
 						
 		},
 		featuredefs = {

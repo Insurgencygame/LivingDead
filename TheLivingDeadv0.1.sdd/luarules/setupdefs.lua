@@ -15,7 +15,7 @@
 for _,ud in pairs(UnitDefs) do
 
   -- set the cost value  (same as shown in the tooltip)
-  ud.cost = ud.metalCost + (ud.energyCost / 60.0)
+  ud.cost = ud.metalCost + (ud.energyCost)
 
   -- add the custom weapons based parameters
   ud.hasShield      = false
