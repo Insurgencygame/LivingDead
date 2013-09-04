@@ -1,0 +1,41 @@
+function gadget:GetInfo()
+  return {
+    name      = "Speed / Stealth state",
+    desc      = "Toggles a units speed and decloak range.",
+    author    = "Zealot",
+    date      = "18 March 2013",
+    license   = "GNU LGPL, v2.1 or later",
+    layer     = 100,
+    enabled   = true  --  loaded by default?
+  }
+end
+
+-- how often to check units
+local UPDATE_PERIOD = 32
+local UPDATE_OFFSET = 5
+
+
+
+
+-- localize functions
+
+local GetUnitDefID = Spring.GetUnitDefID
+local SetUnitCloak = Spring.SetUnitCloak
+local SetUnitMove = Spring.MoveCtrl.SetGroundMoveTypeData
+local SetUnitRulesParam = Spring.SetUnitRulesParam
+
+if (not gadgetHandler:IsSyncedCode()) then
+  return false
+end
+
+local CMD_SPEEDSTEALTH = GG.CustomCommands.GetCmdID("CMD_SPEEDSTEALTH") 
+
+
+
+local speedstealthCmdDesc = {
+	id 		 = CMD_SPEEDSTEALTH,
+  type   = CMDTYPE.ICON_MODE,
+	action = "togglespeedstealth",
+	tooltip = 'Toggle slow and stealthy or fast and non stealthy',
+	params = {0, 'Fast', 'Normal', 'Slow'},
+}
